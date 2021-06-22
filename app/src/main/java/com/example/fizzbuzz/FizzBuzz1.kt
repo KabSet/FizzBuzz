@@ -1,26 +1,37 @@
 package com.example.fizzbuzz
 
 fun main() {
-    for (x in 1..195) {
+    for (x in 1..255) {
+        var words : ArrayList<String> = ArrayList()
+
         if (x % 11 ==0) {
-            print("Bong")
+            words.add("Bong")
         } else {
             if (x % 3 == 0) {
-                print("Fizz")
+                words.add("Fizz")
             }
             if (x % 13 == 0) {
-                print("Fezz")
+                words.add("Fezz")
             }
             if (x % 5 == 0) {
-                print("Buzz")
+                words.add("Buzz")
             }
             if (x % 7 == 0) {
-                print("Bang")
+                words.add("Bang")
             }
-            if (x % 3 != 0 && x % 5 != 0 && x % 7 != 0) {
-                print(x)
+            if (words.isEmpty()) {
+                println(x)
+            } else if (x % 17 == 0) {
+                for (element in words.asReversed()) {
+                    print(element)
+                }
+                print("\n")
+            } else {
+                for (element in words) {
+                    print(element)
+                }
+                print("\n")
             }
         }
-        print("\n")
     }
 }
